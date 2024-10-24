@@ -3,7 +3,7 @@ POST http://localhost:3000/orders
 Content-Type: application/json
 
 {
-  "customerId": "1",
+  "customerId": "2",
   "items": [
     {
       "productName": "Laptop",
@@ -15,12 +15,11 @@ Content-Type: application/json
       "quantity": 2,
       "price": 25
     }
-  ],
-  "totalPrice": 1250
+  ]
 }
 
 ### Get Orders by Customer ID
-GET http://localhost:3000/orders/customer/1
+GET http://localhost:3000/orders/customer/2
 
 ### Retrieve all Orders
 GET http://localhost:3000/orders
@@ -47,4 +46,4 @@ Content-Type: application/json
 }
 
 ### Delete an Order
-DELETE http://localhost:3000/orders/671991fd56ff01c24280afa9
+DELETE http://localhost:3000/orders/6719995bc0fe580263bedb37

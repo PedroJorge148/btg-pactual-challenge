@@ -87,6 +87,19 @@ export class OrdersService {
   }
 
   async remove(id: string): Promise<Order> {
+    // Find the order by ID to get the associated items
+    const order = await this.OrderModel.findById(id).exec()
+
+    if (!order) {
+      throw new Error(`Order with id ${id} not found`)
+    }
+
+    // Delete all associated order items
+    await this.OrderItemModel.deleteMany({
+      _id: { $in: order.items }, // Remove all items with IDs in the order's items array
+    })
+
+    // Delete the order itself
     return this.OrderModel.findByIdAndDelete(id).exec()
   }
 }
