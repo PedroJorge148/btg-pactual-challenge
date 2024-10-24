@@ -1,0 +1,50 @@
+### Create a new Order
+POST http://localhost:3000/orders
+Content-Type: application/json
+
+{
+  "customerId": "1",
+  "items": [
+    {
+      "productName": "Laptop",
+      "quantity": 1,
+      "price": 1200
+    },
+    {
+      "productName": "Mouse",
+      "quantity": 2,
+      "price": 25
+    }
+  ],
+  "totalPrice": 1250
+}
+
+### Get Orders by Customer ID
+GET http://localhost:3000/orders/customer/1
+
+### Retrieve all Orders
+GET http://localhost:3000/orders
+Accept: application/json
+
+### Retrieve a specific Order by ID
+GET http://localhost:3000/orders/671991fd56ff01c24280afa9
+Accept: application/json
+
+### Update an Order
+PUT http://localhost:3000/orders/67198dea422f398ee5ecef13
+Content-Type: application/json
+
+{
+  "customerId": "1",
+  "items": [
+    {
+      "productName": "Monitor",
+      "quantity": 1,
+      "price": 300
+    }
+  ],
+  "totalPrice": 300
+}
+
+### Delete an Order
+DELETE http://localhost:3000/orders/671991fd56ff01c24280afa9
